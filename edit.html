@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+            <link rel="stylesheet" type="text/css" href="main.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+            <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+            <style>
+                a.nav-link{
+                    color: black;
+                }
+            </style>
+    </head>
+    
+    <body class="grey lighten-3">
+
+<!--               <div class="loginhead">
+                    <div class="loginname">Login</div>
+                    <form id="login-form">
+                        <div class="input-field">
+                            <input type="email" id="login-email" required />
+                            <label for="login-email">Email address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="login-password" required />
+                            <label for="login-password">Password</label>
+                        </div>
+                        <button class="loginbtn">Log In</button>
+                    </form>
+                    <div class="logged-in">
+                        <a href="#" class="grey-text" id="logout">Logout</a>
+                    </div>
+                </div>-->
+
+                <nav class="nav">
+                    <a href="" class="nav-link" data-toggle="modal" data-target="#modalLoginForm">Login</a>
+                    <a href="#" class="nav-link" id="logout">Logout</a>
+                </nav>
+
+                <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <form class="modal-content" id="login-form">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="login-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="login-email">Your email</label>
+                        </div>
+
+                        <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="login-password" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="login-password">Your password</label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="loginbtn">Login</button>
+                    </div>
+                </form>
+                </div>
+                </div>
+
+        <div class="content" id="edipage">
+            <h1>Editor Page</h1>  
+            <div class="jumbotron text-center">
+                <div class="header">Maron Fabelico</div>
+                <p>Student | Gamer | Programmer</p>
+            </div>
+            <ul class="nav justify-content-center sticky-top">
+                <li class="nav-item">
+                    <a class="nav-link" href="#hom">- Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#educ">- Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ski">- Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#orgs">- Organizations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#trabaho">- Works</a>
+                </li>
+              </ul>
+            <div class="introone" id="hom">
+                <div class="introtwo" data-period="2000" data-type='[ "Hello, My Name is Maron.", "Welcome To My Site.", "I Hope You Enjoy Your Stay.", "Thank You For Visiting!" ]'></div>
+            </div>
+            <form id="addhobbies">
+                <input type="text" name="name" placeholder="Name">
+                <button>Add Hobby</button>
+            </form>
+            <form id="editintro">
+                <text type="text" name="intro" placeholder="Intro">
+                <button>Edit Intro</button>
+            </form>
+            <div class="container-fluid p-0">
+                <mid>
+                    <div id="infoid" class="info">
+                        <div class="myname">Maron Fabelico</div>
+                        <div class="university">De La Salle University</div>
+    <!--                   <div class="message">Hello! My name is Maron Fabelico. I am a student currently taking
+                            Bachelor of Science in Information Technology in DLSU. My hobbies are playing video
+                            games and listening to music. I would like to welcome you to my page.
+                        </div>  -->  
+                    </div>
+                    <div class="picinfo border border-dark">
+                        <div class="roundpic">
+                            <img src="me.jpg" class="rounded-circle" height="275" width="275">
+                        </div>
+                        <div class="description">
+                            _________<br>
+                            Name: Maron Fabelico<br>
+                            Nationality: Filipino<br>
+                            Birthdate: 7/23/2000<br>
+                            Sex: Male<br>
+                        </div>
+                    </div>
+                    <div id="myhobbies" class="whatido">
+                        <div class="hobby">Hobbies</div>                       
+                    </div> 
+                </mid>
+                <form id="addeducation">
+                    <input type="text" name="school" placeholder="School">
+                    <input type="text" name="degree" placeholder="Degree (optional)">
+                    <input type="number" name="year_start" placeholder="Start of year">
+                    <input type="number" name="year_end" placeholder="End of year">
+                    <button>Add School</button>
+                </form>
+                <education id="educ">
+                    <div id="educid" class="edheader">
+                        Education
+                    </div>
+     <!--              <div></div>
+                    <div class="schoo">
+                        <div class="logo">
+                            <img src="shap.jpg" class="rounded-circle" width="260" height="236">
+                        </div>
+                        <div class="schoolname">Sacred Heart Academy of Pasig</div>
+                        <div class="schooldate">
+                            A.Y. 2012 - 2016
+                        </div>
+                    </div>
+                    <div class="schoo">
+                        <div class="logo">
+                            <img src="csa.png" class="rounded-circle" width="260" height="236">
+                        </div>
+                        <div class="schoolname">Colegio San Agustin - Makati</div>
+                        <div class="schooldate">
+                            A.Y. 2016 - 2018
+                        </div>
+                    </div>
+                    <div class="schoo">
+                        <div class="logo">
+                            <img src="dlsu.png"width="260" height="236">
+                        </div>
+                        <div class="schoolname">De La Salle University - Manila</div>
+                        <div class="schooldate">
+                            A.Y. 2018 - Present
+                   </div>-->
+                 </div>
+                </education>
+                <skills id="ski">
+                    <div class="ability border-bottom border-dark">Skills</div>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                        <br>
+                        <div class="level">
+                            Current Level: Novice
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            HTML
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            C
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">60%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            Java
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">65%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            CSS
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">65%</div>
+                            </div>
+                        </div>
+                        </div>
+                          <div class="carousel-item">
+                        <br>
+                        <div class="level">
+                            Current Level: Intermediate
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            Gaming
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">85%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            Basketball
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            Drumming
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">60%</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="progbar">
+                            Collecting
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">65%</div>
+                            </div>
+                        </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </skills>
+                <form id="addorganization">
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="position" placeholder="Position">
+                    <input type="number" name="year_start" placeholder="Start of year">
+                    <input type="number" name="year_end" placeholder="End of year">
+                    <button>Add Organization</button>
+                </form>
+                <organization id="orgs">
+                    <div class="edheader">
+                        Organizations
+                    </div>
+    <!--               <div class="schoo">
+                        <div class="logo">
+                            <img src="lscs.png" class="rounded-circle" width="260" height="236">
+                        </div>
+                        <div class="schoolname">La Salle Computer Society</div>
+                        <div class="schooldate">
+                            A.Y. 2018 - Present
+                        </div>
+                    </div>
+                    <div class="schoo">
+                        <div class="logo">
+                            <img src="uxs.png" class="rounded-circle" width="260" height="236">
+                        </div>
+                        <div class="schoolname">User Experience Society - DLSU</div>
+                        <div class="schooldate">
+                            A.Y. 2019 - Present (Member)<br>
+                        </div>
+                    </div>
+                    <div class="schoo">
+                        <div class="logo">
+                            <img src="oc.jpg" class="rounded-circle" width="260" height="236">
+                        </div>
+                        <div class="schoolname">Outdoor Club</div>
+                        <div class="schooldate">
+                            A.Y. 2018 - 2019 (Member)<br>
+                        </div>
+                    </div> -->
+                </organization>
+                <form id="addworks">
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="year" name="year" placeholder="Year">
+                    <button>Add Work</button>
+                </form>
+                <works id="trabaho">
+                    <div class="mps border-bottom border-dark">Works</div>
+    <!--                <div class="workcontainer">
+                        <div class="machine border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                        <div class="project border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                        <div class="network border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                        <div class="ccprogre border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                        <div class="hotel border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                        <div class="ccprog border border-dark">
+                            <div class="projname">Sushi Go!</div>
+                        </div>
+                    </div>-->
+                </works>
+                <foot>
+                    <div class="footcont">
+                        <h1>Contact Me</h1><br>
+                        Email: maron_fabelico@dlsu.edu.ph<br>
+                        Address: Taguig, Philippines<br>
+                        Phone: 0123456789
+                    </div>
+                    <div id="sociallink">
+                        <h2>Social Media</h2>
+                    </div>
+                    <div class="minimenu">
+                        <h2>Menu</h2>
+                        <a class="navi" href="#hom">Home</a><br>
+                        <a class="navi" href="#educ">Education</a><br>
+                        <a class="navi" href="#ski">Skills</a><br>
+                        <a class="navi" href="#orgs">Organizations</a><br>
+                        <a class="navi" href="#trabaho">Works</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <script src="login.js"></script>
+    </body>
+</html>

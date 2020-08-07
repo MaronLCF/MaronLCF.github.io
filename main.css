@@ -1,0 +1,310 @@
+   
+    div.header{
+        margin-top: 30px;
+        font-size: 60px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+    
+    div.jumbotron{
+        background-image: url(background2.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+        font-family: 'Space Mono';
+        color:#e3e2df;
+        margin-bottom: 0;
+    }
+
+    div.jumbotron:hover{
+        cursor: default;
+    }
+
+    ul.nav{
+        background-color: #222629;
+        column-gap: 50px;
+        font-family: 'Space Mono';
+    }
+
+    .nav-link{
+        color: #ffffff;
+        margin-left: 20px;
+    }
+
+    .nav-link:hover{
+        color: #61892f;
+    }
+
+    div.row{
+        height: 200px;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.container{
+        height: 500px;
+        width: 100 vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    div.introone{
+        display: grid;
+        height: 450px;
+        background-color: #000000;
+        text-align: center;
+        font-size: 75px;
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    div.introtwo{
+        margin-top: 200px;
+        color: #e3e2df;
+        font-family: 'Lucida Console';
+    }
+      
+    mid{
+        display: grid;
+        grid-template-columns: 40% 20% 40%;
+        grid-template-rows: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #e3e2df;
+        color: #474b4f;
+        font-family: 'Space Mono';
+    }
+
+    div.info{
+        text-align: right;
+        margin-top: 50px;
+        margin-right: 30px;
+    }
+
+    div.myname{
+        font-size: 40px;
+    }
+
+    div.intro{
+        font-size: 20px;
+    }
+
+    div.picinfo{
+        display: grid;
+        height: 650px;
+        grid-template-rows: 55% 45%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    div.roundpic{
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    div.description{
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    div.whatido{
+        text-align: center;
+        margin-top: 30px;
+        padding: 0;
+        font-size: 30px;
+    }
+
+    div.hobby{
+        font-size: 55px;
+        margin-bottom: 5px;
+    }
+
+    div.university{
+        color: #087830;
+        font-family: 'Space Mono';
+        padding-bottom: 30px;
+    }
+
+    div.edheader{
+        display: grid;
+        text-align: center;
+        height: 100px;
+        font-family: 'Space Mono';
+        margin-top: 25px;
+        font-size: 50px;
+        color: #ffffff;
+    }
+
+    education, organization{
+        display: grid;
+        padding-left: 5%;
+        padding-right: 5%;
+        height: auto;
+        width: auto;
+        font-family: 'Space Mono';
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        row-gap: 20px;
+        font-size: 20px;
+        color: #e3e2df;
+        background-color: #000000;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    div.logo{
+        margin-top: 10px;
+    }
+
+    div.schoo{
+        display: grid;
+        grid-template-rows: 80% 10% 10%;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+        background-color: #000000;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    div.curr{
+        display: grid;
+        grid-template-rows: 40% 60%;
+        text-align: center;
+        background-color: #000000;
+        font-size: 40px;
+        height: 300px;
+        color: #e3e2df;
+    }
+
+    span.course{
+        margin-top: 50px;
+    }
+
+    div.currcourse{
+        display: none;
+        margin-top: 20px;
+    }
+
+    skills{
+        display: grid;
+        grid-template-rows: 20% 80%;
+        height: 720px;
+        background-color: #e3e2df;
+        font-family: 'Space Mono';
+    }
+
+    div.ability{
+        font-size: 50px;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+
+    div.level{
+        font-size: 30px;
+        margin-left: 25px;
+    }
+
+    div.progbar{
+        font-size: 20px;
+        margin-left: 25px;
+    }
+
+    div.progress{
+        width: 90%;
+        height: 20px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next{
+        margin-top: 450px;
+    }   
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        filter: invert(1);
+    }
+
+    works{
+        display: grid;
+        height: auto;
+        background-color: #e3e2df;
+        font-family: 'Space Mono';
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+        row-gap: 20px;
+    }
+
+    div.mps{
+        font-size: 50px;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        height: 130px;
+    }
+
+    div.workcontainer{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 40px;
+        row-gap: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    div.projname{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    foot{
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        height: 300px;
+        background-color: #222629;
+        color: #e3e2df;
+        font-family: 'Space Mono';
+        font-size: 20px;
+    }
+
+    div.footcont{
+        margin-top: 25px;
+        margin-left: 50px;
+    }
+
+    #sociallink, div.minimenu{
+        margin-top: 30px;
+    }
+
+    .navi{
+        color: #e3e2df;
+    }
+    
+    .link{
+        margin-top: -50px;
+        color: #e3e2df;
+    }
+
+    div.loginhead{
+        display: grid;
+        text-align: center;
+    }
+
+    div.loginname{
+        font-size: 50px;
+    }
