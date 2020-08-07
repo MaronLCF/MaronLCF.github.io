@@ -58,6 +58,7 @@ firebase.auth().onAuthStateChanged(user => {
             let cross = document.createElement('span');
 
             dib.setAttribute('data-id', doc.id);
+            cross.setAttribute('id',"xbutton");
             school.textContent = doc.data().school;
             degree.textContent = doc.data().degree;
             year_start.textContent = doc.data().year_start + " - ";
@@ -91,6 +92,7 @@ firebase.auth().onAuthStateChanged(user => {
             let cross = document.createElement('span');
 
             dib.setAttribute('data-id', doc.id);
+            cross.setAttribute('id',"xbutton");
             name.textContent = doc.data().name;
             position.textContent = doc.data().position;
             year_start.textContent = doc.data().year_start + " - ";
@@ -120,6 +122,7 @@ firebase.auth().onAuthStateChanged(user => {
             let cross = document.createElement('span');
 
             dib.setAttribute('data-id', doc.id);
+            cross.setAttribute('id',"xbutton");
             name.textContent = doc.data().name;
             year.textContent = doc.data().year;
             cross.textContent = 'x';
@@ -145,6 +148,7 @@ firebase.auth().onAuthStateChanged(user => {
 
             dib.setAttribute('data-id', doc.id);
             name.textContent = doc.data().name;
+            cross.setAttribute('id',"xbutton");
             cross.textContent = 'x';
 
             dib.appendChild(name);

@@ -12,16 +12,8 @@
         text-align: center;
         font-size: 50px;
         color: #222629;
-    }
-
-    #logged{
-        color: black;
-        font-size: 20px;
-    }
-
-    #logout{
-        color: black;
-        font-size: 20px;
+        font-family: 'Space Mono';
+        padding-top: 20%;
     }
     
     div.jumbotron{
@@ -267,7 +259,7 @@
         text-decoration: underline;
         margin-bottom: 20px;
         margin-top: 20px;
-        height: 130px;
+        height: 110px;
     }
 
     div.workcontainer{
@@ -323,4 +315,15 @@
 
     div.loginname{
         font-size: 50px;
+    }
+
+    nav.nav{
+        background-color: #222629;
+        color: #e3e2df;
+        font-family: 'Space Mono';
+        font-size: 20px;
+    }
+
+    #xbutton:hover{
+        cursor: pointer;
     }
