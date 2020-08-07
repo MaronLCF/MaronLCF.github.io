@@ -17,11 +17,6 @@
             <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
             <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
 
-            <style>
-                a.nav-link{
-                    color: black;
-                }
-            </style>
     </head>
     
     <body class="grey lighten-3">
@@ -45,8 +40,8 @@
                 </div>-->
 
                 <nav class="nav justify-content-center">
-                    <a href="" class="nav-link" data-toggle="modal" data-target="#modalLoginForm">Login</a>
-                    <a href="#" class="nav-link" id="logout">Logout</a>
+                    <a href="" class="nav-link" data-toggle="modal" id="logged" data-target="#modalLoginForm">Login</a>
+                    <a href="#" class="nav-link" id="logout" style="display: none;">Logout</a>
                 </nav>
 
                 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -79,7 +74,7 @@
                 </form>
                 </div>
                 </div>
-
+        <div id="alerter">Login To View Editor</div>
         <div class="content" id="edipage">
             <h1>Editor Page</h1>  
             <div class="jumbotron text-center">

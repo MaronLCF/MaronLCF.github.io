@@ -14,6 +14,19 @@ var defaultProject = firebase.initializeApp(firebaseConfig);
 
 var db = firebase.firestore()
 
+const loggedIn = document.querySelectorAll('#logout');
+const loggedOut = document.querySelectorAll('#logged');
+
+const setupUI = (user) => {
+    if (user) {
+        loggedIn.forEach(item => item.style.display = 'block');
+        loggedOut.forEach(item => item.style.display = 'none');
+    } else {
+        loggedIn.forEach(item => item.style.display = 'none');
+        loggedOut.forEach(item => item.style.display = 'block');
+    }
+}
+
 // listen for auth status
 firebase.auth().onAuthStateChanged(user => {
     if (user){
@@ -30,6 +43,7 @@ firebase.auth().onAuthStateChanged(user => {
         const formintro = document.querySelector('#editintro');
 
         $('#edipage').show();
+        $('#alerter').hide();
 
         // create element and render school
         function renderSchool(doc){
@@ -321,6 +335,8 @@ firebase.auth().onAuthStateChanged(user => {
             }
                 formintro.intro.value = '';
         })
+
+        setupUI(user);
     } else {
 
         function renderLogout(){
@@ -331,14 +347,14 @@ firebase.auth().onAuthStateChanged(user => {
             $('#trabaho').empty();
             $('#myhobbies').empty();
             $('#edipage').hide();
+            $('#alerter').show();
         }
 
+        setupUI();
         renderLogout();
+
     }
 })
-
-
-
 
 
 // login

@@ -7,6 +7,22 @@
     p{
         font-size: 20px;
     }
+
+    #alerter{
+        text-align: center;
+        font-size: 50px;
+        color: #222629;
+    }
+
+    #logged{
+        color: black;
+        font-size: 20px;
+    }
+
+    #logout{
+        color: black;
+        font-size: 20px;
+    }
     
     div.jumbotron{
         background-image: url(background2.jpg);
