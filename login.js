@@ -41,6 +41,9 @@ firebase.auth().onAuthStateChanged(user => {
         const formwork = document.querySelector('#addworks');
         const formhobby = document.querySelector('#addhobbies');
         const formintro = document.querySelector('#editintro');
+        const formg = document.querySelector('#editgithub');
+        const formli = document.querySelector('#editlinkedin');
+        const formt = document.querySelector('#edittwitter');
 
         $('#edipage').show();
         $('#alerter').hide();
@@ -172,23 +175,15 @@ firebase.auth().onAuthStateChanged(user => {
         function renderLink(doc){
             let dib = document.createElement('div');
             let link = document.createElement('a');
-            let cross = document.createElement('span');
 
             dib.setAttribute('class', doc.id);
             link.setAttribute('href', doc.data().value);
             link.textContent = doc.id;
-            cross.textContent = 'x';
 
             dib.appendChild(link);
-            dib.appendChild(cross);
 
             linklist.appendChild(dib);
 
-            cross.addEventListener('click', (e) => {
-                e.stopPropagation();
-                let id = e.target.parentElement.getAttribute('class');
-                db.collection('links').doc(id).delete();
-            })
         }
 
         //realtime listener
@@ -250,18 +245,11 @@ firebase.auth().onAuthStateChanged(user => {
             })
         });
 
-        db.collection('links').onSnapshot(snapshot => {
-            let changes = snapshot.docChanges();
-            changes.forEach(change => {
-               if(change.type == 'added'){
-                   renderLink(change.doc);
-               }
-               else if (change.type == 'removed'){
-                   let dib = linklist.querySelector('[class=' + change.doc.id + ']');
-                   linklist.removeChild(dib);
-               }
+        db.collection('links').get().then((snapshot) => {
+            snapshot.docs.forEach(doc => {
+                renderLink(doc);
             })
-        })
+        });
 
 
         //saving data
@@ -334,6 +322,36 @@ firebase.auth().onAuthStateChanged(user => {
                 })
             }
                 formintro.intro.value = '';
+        })
+
+        formg.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (formg.linkg.value != ""){
+                db.collection('links').doc('Github').update({
+                    value: formg.linkg.value
+                })
+            }
+                formg.linkg.value = '';
+        })
+
+        formli.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (formli.linkli.value != ""){
+                db.collection('links').doc('Linkedin').update({
+                    value: formli.linkli.value
+                })
+            }
+                formli.linkli.value = '';
+        })
+
+        formt.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (formt.linkt.value != ""){
+                db.collection('links').doc('Twitter').update({
+                    value: formt.linkt.value
+                })
+            }
+                formt.linkt.value = '';
         })
 
         setupUI(user);
