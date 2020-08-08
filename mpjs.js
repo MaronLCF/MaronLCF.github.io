@@ -139,6 +139,7 @@
 
                 dib.setAttribute('class', doc.id);
                 link.setAttribute('href', doc.data().value);
+                link.setAttribute('class', "linkcss");
                 link.textContent = doc.id;
 
                 dib.appendChild(link);

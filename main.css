@@ -323,6 +323,10 @@
     .navi{
         color: #e3e2df;
     }
+
+    .navi:hover{
+        color: #61892f;
+    }
     
     .link{
         margin-top: -50px;
@@ -389,4 +393,12 @@
     div.sm{
         font-size: 30px;
         margin-top: 30px;
+    }
+
+    a.linkcss{
+        color: #e3e2df;
+    }
+
+    a.linkcss:hover{
+        color: #61892f;
     }

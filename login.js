@@ -183,6 +183,7 @@ firebase.auth().onAuthStateChanged(user => {
 
             dib.setAttribute('class', doc.id);
             link.setAttribute('href', doc.data().value);
+            link.setAttribute('class', "linkcss");
             edit.setAttribute('class',"addbtn rounded-circle");
             edit.setAttribute('data-toggle',"modal");
             edit.setAttribute('id',"plusl");
