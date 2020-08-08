@@ -55,7 +55,7 @@ firebase.auth().onAuthStateChanged(user => {
             let degree = document.createElement('div'); 
             let year_start = document.createElement('span');
             let year_end = document.createElement('span');
-            let cross = document.createElement('span');
+            let cross = document.createElement('div');
 
             dib.setAttribute('data-id', doc.id);
             cross.setAttribute('id',"xbutton");
@@ -63,7 +63,7 @@ firebase.auth().onAuthStateChanged(user => {
             degree.textContent = doc.data().degree;
             year_start.textContent = doc.data().year_start + " - ";
             year_end.textContent = doc.data().year_end;
-            cross.textContent = 'x';
+            cross.textContent = 'X';
 
 
             dib.appendChild(school);
@@ -89,7 +89,7 @@ firebase.auth().onAuthStateChanged(user => {
             let position = document.createElement('div'); 
             let year_start = document.createElement('span');
             let year_end = document.createElement('span');
-            let cross = document.createElement('span');
+            let cross = document.createElement('div');
 
             dib.setAttribute('data-id', doc.id);
             cross.setAttribute('id',"xbutton");
@@ -97,7 +97,7 @@ firebase.auth().onAuthStateChanged(user => {
             position.textContent = doc.data().position;
             year_start.textContent = doc.data().year_start + " - ";
             year_end.textContent = doc.data().year_end;
-            cross.textContent = 'x';
+            cross.textContent = 'X';
 
             dib.appendChild(name);
             dib.appendChild(position);
@@ -119,13 +119,13 @@ firebase.auth().onAuthStateChanged(user => {
             let dib = document.createElement('div');
             let name = document.createElement('div');
             let year = document.createElement('div');
-            let cross = document.createElement('span');
+            let cross = document.createElement('div');
 
             dib.setAttribute('data-id', doc.id);
             cross.setAttribute('id',"xbutton");
             name.textContent = doc.data().name;
             year.textContent = doc.data().year;
-            cross.textContent = 'x';
+            cross.textContent = 'X';
 
             dib.appendChild(name);
             dib.appendChild(year);
@@ -149,7 +149,7 @@ firebase.auth().onAuthStateChanged(user => {
             dib.setAttribute('data-id', doc.id);
             name.textContent = doc.data().name;
             cross.setAttribute('id',"xbutton");
-            cross.textContent = 'x';
+            cross.textContent = 'X';
 
             dib.appendChild(name);
             dib.appendChild(cross);
@@ -179,12 +179,19 @@ firebase.auth().onAuthStateChanged(user => {
         function renderLink(doc){
             let dib = document.createElement('div');
             let link = document.createElement('a');
+            let edit = document.createElement('a');
 
             dib.setAttribute('class', doc.id);
             link.setAttribute('href', doc.data().value);
-            link.textContent = doc.id;
+            edit.setAttribute('class',"addbtn rounded-circle");
+            edit.setAttribute('data-toggle',"modal");
+            edit.setAttribute('id',"plusl");
+            edit.setAttribute('data-target',"#modalEdit" + doc.id);
+            link.textContent = doc.id + "       ";
+            edit.textContent = "edit";
 
             dib.appendChild(link);
+            dib.appendChild(edit);
 
             linklist.appendChild(dib);
 
@@ -278,6 +285,7 @@ firebase.auth().onAuthStateChanged(user => {
                 form.degree.value = '';
                 form.year_start.value = '';
                 form.year_end.value = '';
+                $('#modalAddEduc').modal('toggle');
         })
 
         formorg.addEventListener('submit', (e) => {
@@ -294,6 +302,7 @@ firebase.auth().onAuthStateChanged(user => {
                 formorg.position.value = '';
                 formorg.year_start.value = '';
                 formorg.year_end.value = '';
+                $('#modalAddOrgs').modal('toggle');
         })
 
         formwork.addEventListener('submit', (e) => {
@@ -306,6 +315,7 @@ firebase.auth().onAuthStateChanged(user => {
             }
                 formwork.name.value = '';
                 formwork.year.value = '';
+                $('#modalAddWork').modal('toggle');
         })
 
         formhobby.addEventListener('submit', (e) => {
@@ -316,6 +326,7 @@ firebase.auth().onAuthStateChanged(user => {
             });
             }
                 formhobby.name.value = '';
+                $('#modalAddHobby').modal('toggle');
         })
 
         formintro.addEventListener('submit', (e) => {
@@ -326,6 +337,7 @@ firebase.auth().onAuthStateChanged(user => {
                 })
             }
                 formintro.intro.value = '';
+                $('#modalEditIntro').modal('toggle');
         })
 
         formg.addEventListener('submit', (e) => {
@@ -368,6 +380,7 @@ firebase.auth().onAuthStateChanged(user => {
             $('#educ').empty();
             $('#trabaho').empty();
             $('#myhobbies').empty();
+            $('#sociallink').empty();
             $('#edipage').hide();
             $('#alerter').show();
         }

@@ -14,6 +14,8 @@
         color: #222629;
         font-family: 'Space Mono';
         padding-top: 20%;
+        background-image: url(head.jpg);
+        height: 100vh;
     }
     
     div.jumbotron{
@@ -126,9 +128,28 @@
         font-size: 30px;
     }
 
+    span.hobby{
+        font-size: 55px;
+        padding-bottom: 50px;
+    }
+
     div.hobby{
         font-size: 55px;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    #myhobbies{
+        display: grid;
+        height: auto;
+        row-gap: 30px;
+        font-size: 30px;
+    }
+
+    #infoid{
+        display: grid;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     div.university{
@@ -137,8 +158,7 @@
         padding-bottom: 30px;
     }
 
-    div.edheader{
-        display: grid;
+    span.edheader{
         text-align: center;
         height: 100px;
         font-family: 'Space Mono';
@@ -162,24 +182,12 @@
         font-size: 20px;
         color: #e3e2df;
         background-color: #000000;
-        padding-bottom: 30px;
+        padding-bottom: 40px;
         text-align: center;
     }
 
     div.logo{
         margin-top: 10px;
-    }
-
-    div.schoo{
-        display: grid;
-        grid-template-rows: 80% 10% 10%;
-        text-align: center;
-        height: auto;
-        font-size: 20px;
-        background-color: #000000;
-        border-radius: 10px;
-        margin-top: 10px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     div.curr{
@@ -253,13 +261,26 @@
         row-gap: 20px;
     }
 
+    span.mps{
+        font-size: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        height: 100px;
+        font-family: 'Space Mono';
+        color: #222629;
+    }
+
     div.mps{
         font-size: 50px;
         text-align: center;
         text-decoration: underline;
         margin-bottom: 20px;
         margin-top: 20px;
-        height: 110px;
+        height: 100px;
+        font-family: 'Space Mono';
+        color: #222629;
     }
 
     div.workcontainer{
@@ -295,7 +316,7 @@
         margin-left: 50px;
     }
 
-    #sociallink, div.minimenu{
+    div.minimenu{
         margin-top: 30px;
     }
 
@@ -326,4 +347,46 @@
 
     #xbutton:hover{
         cursor: pointer;
+    }
+
+    #plusl:hover{
+        cursor: pointer;
+        
+    }
+
+    #addhobbies{
+        text-align: center;
+        
+    }
+
+    #editintro{
+        text-align: center;
+    }
+
+    #plus,#plusl{
+        color: #222629;
+        background-color: #e3e2df;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-decoration: none;
+        font-family: 'Space Mono';
+    }
+
+    #plusw{
+        background-color: #222629;
+        color: #e3e2df;
+        text-decoration: none;
+        font-family: 'Space Mono';
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    #educ, #orgs, #trabaho{
+        display: grid;
+        row-gap: 20px;
+    }
+
+    div.sm{
+        font-size: 30px;
+        margin-top: 30px;
     }
