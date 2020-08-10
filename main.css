@@ -10,11 +10,13 @@
 
     #alerter{
         text-align: center;
-        font-size: 50px;
-        color: #222629;
+        font-size: 80px;
+        color: black;
         font-family: 'Space Mono';
         padding-top: 20%;
         background-image: url(head.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
         height: 100vh;
     }
     
@@ -402,3 +404,38 @@
     a.linkcss:hover{
         color: #61892f;
     }
+
+    .modal{
+        font-family: 'Space Mono';
+    }
+
+    .loginbtn{
+        font-family: 'Space Mono';
+        width: 100px;
+    }
+
+    .form-control{
+        font-family: 'Arial';
+        background-color: #222629;
+    }
+
+    .modal-header{
+        background-color: #e3e2df;
+        color: #222629;
+    }
+
+    .modal-body{
+        background-color: #e3e2df;
+        color: #222629;
+    }
+
+    .modal-footer{
+        color: #222629;
+        background-color: #e3e2df;
+    }
+
+    .md-form{
+        border-color: #222629;
+    }
+
+
