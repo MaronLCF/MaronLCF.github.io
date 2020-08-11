@@ -220,25 +220,6 @@
             })
 
 
-/*            var email = "maron_fabelico@dlsu.edu.ph";
-            var password = "password";
-            
-            firebase.auth().signInWithEmailAndPassword(email, password).then(function(user){
-                console.log("user signed in");
-                
-                var user = firebase.auth().currentUser;
-                if (user!=null){
-                    console.log(user.email);
-                }
-            }).catch(function(err){
-                if(err.code == "auth/wrong-password"){
-                    alert("wrong password")
-                }
-                else{
-                    alert(err.message);
-                }
-            });*/
-
             var TxtType = function(el, toRotate, period) {
                 this.toRotate = toRotate;
                 this.el = el;
