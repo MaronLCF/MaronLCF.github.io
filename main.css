@@ -414,6 +414,11 @@
         width: 100px;
     }
 
+    .loginlinkbtn{
+        font-family: 'Space Mono';
+        width: 150px;
+    }
+
     .form-control{
         font-family: 'Arial';
         background-color: #222629;

@@ -349,6 +349,7 @@ firebase.auth().onAuthStateChanged(user => {
                 })
             }
                 formg.linkg.value = '';
+                $('#modalEditGithub').modal('toggle');
         })
 
         formli.addEventListener('submit', (e) => {
@@ -359,6 +360,7 @@ firebase.auth().onAuthStateChanged(user => {
                 })
             }
                 formli.linkli.value = '';
+                $('#modalEditLinkedin').modal('toggle');
         })
 
         formt.addEventListener('submit', (e) => {
@@ -369,6 +371,7 @@ firebase.auth().onAuthStateChanged(user => {
                 })
             }
                 formt.linkt.value = '';
+                $('#modalEditTwitter').modal('toggle');
         })
 
         setupUI(user);
