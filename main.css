@@ -177,10 +177,6 @@
         height: auto;
         width: auto;
         font-family: 'Space Mono';
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         row-gap: 20px;
         font-size: 20px;
         color: #e3e2df;
