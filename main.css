@@ -152,6 +152,7 @@
         display: grid;
         height: auto;
         margin-bottom: 20px;
+        font-size: 20px;
     }
 
     div.university{
@@ -355,7 +356,17 @@
         cursor: pointer;
     }
 
-    #plusl:hover{
+    #pluslink:hover{
+        cursor: pointer;
+        
+    }
+
+    #plusgit:hover{
+        cursor: pointer;
+        
+    }
+
+    #plustwit:hover{
         cursor: pointer;
         
     }
@@ -369,7 +380,7 @@
         text-align: center;
     }
 
-    #plus,#plusl{
+    #plus, #pluslink, #plusgit, #plustwit{
         color: #222629;
         background-color: #e3e2df;
         padding-left: 20px;

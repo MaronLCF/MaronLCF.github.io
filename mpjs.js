@@ -45,6 +45,12 @@
             const formwork = document.querySelector('#addworks');
             const formhobby = document.querySelector('#addhobbies');
             const formintro = document.querySelector('#editintro');
+            const formg = document.querySelector('#editgithub');
+            const formli = document.querySelector('#editlinkedin');
+            const formt = document.querySelector('#edittwitter');
+            const linkgit = document.querySelector("#gitlink");
+            const inlink = document.querySelector("#linklink");
+            const linktwit = document.querySelector("#twitlink");
 
             // create element and render school
             function renderSchool(doc){
@@ -122,29 +128,26 @@
             }
 
             function renderIntro(doc){
-                let dib = document.createElement('div');
-                let value = document.createElement('div');
-
-                dib.setAttribute('class', doc.id);
-                value.textContent = doc.data().value;
-
-                dib.appendChild(value);
-
-                introlist.appendChild(dib);
+                introlist.textContent = doc.data().value;
+    
             }
-
-            function renderLink(doc){
-                let dib = document.createElement('div');
-                let link = document.createElement('a');
-
-                dib.setAttribute('class', doc.id);
-                link.setAttribute('href', doc.data().value);
-                link.setAttribute('class', "linkcss");
-                link.textContent = doc.id;
-
-                dib.appendChild(link);
-
-                linklist.appendChild(dib);
+    
+            function renderLinkGithub(doc){
+                if (doc.id == "Github"){
+                    linkgit.setAttribute('href', doc.data().value);
+                }
+            }
+    
+            function renderLinkLinkedin(doc){
+                if (doc.id == "Linkedin"){
+                    inlink.setAttribute('href', doc.data().value);
+                }
+            }
+    
+            function renderLinkTwitter(doc){
+                if (doc.id == "Twitter"){
+                    linktwit.setAttribute('href', doc.data().value);
+                }
             }
 
             //realtime listener
@@ -200,22 +203,19 @@
                 })
             })
 
-           db.collection('others').get().then((snapshot) => {
-                snapshot.docs.forEach(doc => {
-                    renderIntro(doc);
+            db.collection('others').onSnapshot(snapshot => {
+                let changes = snapshot.docChanges();
+                changes.forEach(change => {
+                       renderIntro(change.doc);
                 })
-            });
-
+            })
+    
             db.collection('links').onSnapshot(snapshot => {
                 let changes = snapshot.docChanges();
                 changes.forEach(change => {
-                   if(change.type == 'added'){
-                       renderLink(change.doc);
-                   }
-                   else if (change.type == 'removed'){
-                       let dib = linklist.querySelector('[data-id=' + change.doc.id + ']');
-                       linklist.removeChild(dib);
-                   }
+                       renderLinkGithub(change.doc);
+                       renderLinkLinkedin(change.doc);
+                       renderLinkTwitter(change.doc);
                 })
             })
 

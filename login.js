@@ -35,7 +35,6 @@ firebase.auth().onAuthStateChanged(user => {
         const introlist = document.querySelector('#infoid');
         const worklist = document.querySelector('#trabaho');
         const hobbylist = document.querySelector('#myhobbies');
-        const linklist = document.querySelector('#sociallink');
         const form = document.querySelector('#addeducation');
         const formorg = document.querySelector('#addorganization');
         const formwork = document.querySelector('#addworks');
@@ -165,37 +164,24 @@ firebase.auth().onAuthStateChanged(user => {
         }
 
         function renderIntro(doc){
-            let dib = document.createElement('div');
-            let value = document.createElement('div');
+            introlist.textContent = doc.data().value;
 
-            dib.setAttribute('class', doc.id);
-            value.textContent = doc.data().value;
-
-            dib.appendChild(value);
-
-            introlist.appendChild(dib);
         }
 
         function renderLink(doc){
-            let dib = document.createElement('div');
-            let link = document.createElement('a');
-            let edit = document.createElement('a');
+            let linkgit = document.getElementById('gitlink');
+            let inlink = document.getElementById('linklink');
+            let linktwit = document.getElementById('twitlink');
 
-            dib.setAttribute('class', doc.id);
-            link.setAttribute('href', doc.data().value);
-            link.setAttribute('class', "linkcss");
-            edit.setAttribute('class',"addbtn rounded-circle");
-            edit.setAttribute('data-toggle',"modal");
-            edit.setAttribute('id',"plusl");
-            edit.setAttribute('data-target',"#modalEdit" + doc.id);
-            link.textContent = doc.id + "       ";
-            edit.textContent = "edit";
-
-            dib.appendChild(link);
-            dib.appendChild(edit);
-
-            linklist.appendChild(dib);
-
+            if (doc.id == "Github"){
+                linkgit.setAttribute('href', doc.data().value);
+            }
+            else if (doc.id == "Linkedin"){
+                inlink.setAttribute('href', doc.data().value);
+            }
+            else if (doc.id == "Twitter"){
+                linktwit.setAttribute('href', doc.data().value);
+            }
         }
 
         //realtime listener
@@ -251,17 +237,19 @@ firebase.auth().onAuthStateChanged(user => {
             })
         })
 
-       db.collection('others').get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                renderIntro(doc);
+        db.collection('others').onSnapshot(snapshot => {
+            let changes = snapshot.docChanges();
+            changes.forEach(change => {
+                   renderIntro(change.doc);
             })
-        });
+        })
 
-        db.collection('links').get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                renderLink(doc);
+        db.collection('links').onSnapshot(snapshot => {
+            let changes = snapshot.docChanges();
+            changes.forEach(change => {
+                   renderLink(change.doc);
             })
-        });
+        })
 
 
         //saving data
@@ -384,7 +372,6 @@ firebase.auth().onAuthStateChanged(user => {
             $('#educ').empty();
             $('#trabaho').empty();
             $('#myhobbies').empty();
-            $('#sociallink').empty();
             $('#edipage').hide();
             $('#alerter').show();
         }
