@@ -13,26 +13,7 @@
             var defaultProject = firebase.initializeApp(firebaseConfig);
             
             var db = firebase.firestore()
-            
- /*          db.collection("education").get().then(function(snapshot){
-                snapshot.forEach(function(doc){
-                    console.log(Object.values(doc.data()));
-                    //console.log(get)
-                })
-            });
-            
-            var newObject = {
-                name: "User Experience Society - DLSU",
-                position: "Member",
-                year_start: 2019,
-                year_end: 2020
-            }
-
-/*            db.collection("organizations").add(newObject).then(function(doc){
-                console.log("Item added with the uid: " + doc.id);
-            })
-            
-*/        
+                  
 
             const schoollist = document.querySelector('#educ');
             const orglist = document.querySelector('#orgs');

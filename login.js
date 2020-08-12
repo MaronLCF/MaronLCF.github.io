@@ -392,7 +392,6 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['login-password'].value;
 
     firebase.auth().signInWithEmailAndPassword(email, password).then(cred => {
-        console.log("test");
         loginForm.reset();
         $('#modalLoginForm').modal('toggle');
     });
