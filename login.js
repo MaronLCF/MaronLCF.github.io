@@ -30,6 +30,10 @@ const setupUI = (user) => {
 // listen for auth status
 firebase.auth().onAuthStateChanged(user => {
     if (user){
+
+        $('#edipage').show();
+        $('#alerter').hide();
+
         const schoollist = document.querySelector('#educ');
         const orglist = document.querySelector('#orgs');
         const introlist = document.querySelector('#infoid');
@@ -43,9 +47,6 @@ firebase.auth().onAuthStateChanged(user => {
         const formg = document.querySelector('#editgithub');
         const formli = document.querySelector('#editlinkedin');
         const formt = document.querySelector('#edittwitter');
-
-        $('#edipage').show();
-        $('#alerter').hide();
 
         // create element and render school
         function renderSchool(doc){
@@ -386,7 +387,7 @@ firebase.auth().onAuthStateChanged(user => {
 // login
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+   e.preventDefault();
 
     const email = loginForm['login-email'].value;
     const password = loginForm['login-password'].value;
@@ -394,7 +395,9 @@ loginForm.addEventListener('submit', (e) => {
     firebase.auth().signInWithEmailAndPassword(email, password).then(cred => {
         loginForm.reset();
         $('#modalLoginForm').modal('toggle');
+        location.reload();
     });
+
 });
 
 // logout
