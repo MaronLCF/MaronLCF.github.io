@@ -376,6 +376,10 @@
         text-align: center;
     }
 
+    #introid{
+        resize: none;
+    }
+
 
     #plus, #pluslink, #plusgit, #plustwit{
         color: #222629;
