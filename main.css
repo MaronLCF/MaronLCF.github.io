@@ -352,6 +352,10 @@
         cursor: pointer;
     }
 
+    #xbutton{
+        color: #8b0000;
+    }
+
     #pluslink:hover{
         cursor: pointer;
         
